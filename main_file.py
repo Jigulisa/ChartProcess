@@ -52,6 +52,6 @@ class TheChart:
         self.im.save(f'res.{self.format}')
 
 # TODO
-# 1 - interface; 2 - fix axises render;
+# 1 - interface; 2 - fix axises render; 3 - make current coordinates for cursor; 4 - label axises with numbers
 
 
