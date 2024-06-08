@@ -120,7 +120,7 @@ class TheChart:
 
 
 # TODO
-# 1 interface; 2 fix axises render; 3 make current coordinates for cursor; 4 label axises with numbers (optional)
+# 1 interface; 2 fix axises render; 3 make current coordinates for cursor;
 
 
 # example
