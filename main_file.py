@@ -1,7 +1,7 @@
 from PIL import ImageDraw, Image
 
 
-class Schedule:
+class TheChart:
     def __init__(self, if_sort: bool, frt: str, name: str, x: str, y: str, *pairs: tuple[int, int]):
         """
         The class contains chart's points
@@ -42,8 +42,8 @@ class Schedule:
         self.y = y
 
 
-class TheChart:
-    def __init__(self, chart: Schedule):
+class TheGrafics:
+    def __init__(self, chart: TheChart):
         """
         This class will determine
 
