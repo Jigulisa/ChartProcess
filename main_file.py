@@ -2,40 +2,41 @@ from PIL import ImageDraw, Image
 
 
 class TheChart:
-    def __init__(self, if_sort: bool, frt: str, name: str, x: str, y: str, *pairs: tuple[int, int]):
+    def __init__(self, if_sort: bool, extension: str, name: str, x: str, y: str, *pairs: tuple[int, int]):
         """
         The class contains chart's points
-
+        and names of its axises
+        
         :param if_sort:
-        :param frt:
+        :param extension:
         :param name:
         :param x:
         :param y:
         :param pairs:
         """
 
-        self.points = [*pairs]  # and names of its axises
+        self.points = [*pairs]
         self.x = x
         self.y = y
         self.name = name
-        self.frt = frt
+        self.extension = extension
         self.sorting = if_sort
 
-    def add_pairs(self, *pairs: tuple[int, int]):
+    def add_pairs(self, *pairs: tuple[int, int]) -> None:
         """
 
         :param pairs:
-        :return:
+        :return: None
         """
 
         self.points += pairs
 
-    def change_names(self, x: str, y: str):
+    def change_names(self, x: str, y: str) -> None:
         """
 
         :param x:
         :param y:
-        :return:
+        :return: None
         """
 
         self.x = x
@@ -45,12 +46,13 @@ class TheChart:
 class TheGrafics:
     def __init__(self, chart: TheChart):
         """
-        This class will determine
-
+        This class will determine the size
+        of image and save it
+        
         :param chart:
         """
 
-        self.chart = chart  # the size of image and save it
+        self.chart = chart
         self.size = (600, 600)
         self.im = Image.new('RGB', self.size, color='aliceblue')
         self.draw = ImageDraw.Draw(self.im)
@@ -116,11 +118,11 @@ class TheGrafics:
         :return: None
         """
 
-        self.im.save(f'{self.chart.name}.{self.chart.frt}')
+        self.im.save(f'{self.chart.name}.{self.chart.extension}')
 
 
 # TODO
-# 1 interface; 2 fix axises render; 3 make current coordinates for cursor;
+# 1 interface; 2 fix axises render;
 
 
 # example
